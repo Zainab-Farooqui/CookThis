@@ -1,0 +1,21 @@
+# Node / React
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Spring Boot
+backend/target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Environment / secrets
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+backend/src/main/resources/application.properties
