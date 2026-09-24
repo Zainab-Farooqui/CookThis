@@ -13,13 +13,22 @@ function Navbar() {
   return (
     <header className="ct-navbar">
       <Link to={user ? "/home" : "/"} className="ct-brand">
-        <span className="ct-brand-mark">🍅</span>
+        <span className="ct-brand-mark">🍳</span>
         CookThis
       </Link>
 
       <nav className="ct-nav-links">
         {user ? (
           <>
+            <Link to="/home" className="ct-nav-link">
+              Home
+            </Link>
+            <span className="ct-nav-link ct-nav-link-disabled" title="Coming soon">
+              History
+            </span>
+            <span className="ct-nav-link ct-nav-link-disabled" title="Coming soon">
+              Profile
+            </span>
             <span className="ct-greeting">Hi, {user.name.split(" ")[0]}!</span>
             <button className="btn-ct-ghost" onClick={handleLogout} type="button">
               Log out

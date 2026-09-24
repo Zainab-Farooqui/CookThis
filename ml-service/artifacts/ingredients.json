@@ -1,0 +1,362 @@
+[
+ {
+  "name": "Onion",
+  "key": "onion",
+  "category": "Vegetables",
+  "icon": "🧅",
+  "count": 28,
+  "id": 1
+ },
+ {
+  "name": "Tomato",
+  "key": "tomato",
+  "category": "Vegetables",
+  "icon": "🍅",
+  "count": 23,
+  "id": 2
+ },
+ {
+  "name": "Ginger",
+  "key": "ginger",
+  "category": "Vegetables",
+  "icon": "🫚",
+  "count": 22,
+  "id": 3
+ },
+ {
+  "name": "Garlic",
+  "key": "garlic",
+  "category": "Vegetables",
+  "icon": "🧄",
+  "count": 20,
+  "id": 4
+ },
+ {
+  "name": "Coriander",
+  "key": "coriander",
+  "category": "Vegetables",
+  "icon": "🌿",
+  "count": 15,
+  "id": 5
+ },
+ {
+  "name": "Potato",
+  "key": "potato",
+  "category": "Vegetables",
+  "icon": "🥔",
+  "count": 10,
+  "id": 6
+ },
+ {
+  "name": "Green Peas",
+  "key": "green peas",
+  "category": "Vegetables",
+  "icon": "🫛",
+  "count": 4,
+  "id": 7
+ },
+ {
+  "name": "Carrot",
+  "key": "carrot",
+  "category": "Vegetables",
+  "icon": "🥕",
+  "count": 3,
+  "id": 8
+ },
+ {
+  "name": "Cauliflower",
+  "key": "cauliflower",
+  "category": "Vegetables",
+  "icon": "🥦",
+  "count": 2,
+  "id": 9
+ },
+ {
+  "name": "Kasuri Methi",
+  "key": "kasuri methi",
+  "category": "Vegetables",
+  "icon": "🥬",
+  "count": 2,
+  "id": 10
+ },
+ {
+  "name": "Spinach",
+  "key": "spinach",
+  "category": "Vegetables",
+  "icon": "🥬",
+  "count": 2,
+  "id": 11
+ },
+ {
+  "name": "Cashew",
+  "key": "cashew",
+  "category": "Protein",
+  "icon": "🥜",
+  "count": 5,
+  "id": 12
+ },
+ {
+  "name": "Chicken",
+  "key": "chicken",
+  "category": "Protein",
+  "icon": "🍗",
+  "count": 4,
+  "id": 13
+ },
+ {
+  "name": "Toor Dal",
+  "key": "toor dal",
+  "category": "Protein",
+  "icon": "🍗",
+  "count": 3,
+  "id": 14
+ },
+ {
+  "name": "Urad Dal",
+  "key": "urad dal",
+  "category": "Protein",
+  "icon": "🍗",
+  "count": 3,
+  "id": 15
+ },
+ {
+  "name": "Egg",
+  "key": "egg",
+  "category": "Protein",
+  "icon": "🥚",
+  "count": 2,
+  "id": 16
+ },
+ {
+  "name": "Rajma",
+  "key": "rajma",
+  "category": "Protein",
+  "icon": "🫘",
+  "count": 2,
+  "id": 17
+ },
+ {
+  "name": "Ghee",
+  "key": "ghee",
+  "category": "Dairy",
+  "icon": "🧈",
+  "count": 11,
+  "id": 18
+ },
+ {
+  "name": "Yogurt",
+  "key": "yogurt",
+  "category": "Dairy",
+  "icon": "🥣",
+  "count": 10,
+  "id": 19
+ },
+ {
+  "name": "Milk",
+  "key": "milk",
+  "category": "Dairy",
+  "icon": "🥛",
+  "count": 7,
+  "id": 20
+ },
+ {
+  "name": "Butter",
+  "key": "butter",
+  "category": "Dairy",
+  "icon": "🧈",
+  "count": 6,
+  "id": 21
+ },
+ {
+  "name": "Cream",
+  "key": "cream",
+  "category": "Dairy",
+  "icon": "🥛",
+  "count": 6,
+  "id": 22
+ },
+ {
+  "name": "Paneer",
+  "key": "paneer",
+  "category": "Dairy",
+  "icon": "⬜",
+  "count": 4,
+  "id": 23
+ },
+ {
+  "name": "Rice",
+  "key": "rice",
+  "category": "Grains",
+  "icon": "🍚",
+  "count": 7,
+  "id": 24
+ },
+ {
+  "name": "Gram Flour",
+  "key": "gram flour",
+  "category": "Grains",
+  "icon": "🌾",
+  "count": 4,
+  "id": 25
+ },
+ {
+  "name": "Maida",
+  "key": "maida",
+  "category": "Grains",
+  "icon": "🌾",
+  "count": 3,
+  "id": 26
+ },
+ {
+  "name": "Bread",
+  "key": "bread",
+  "category": "Grains",
+  "icon": "🍞",
+  "count": 2,
+  "id": 27
+ },
+ {
+  "name": "Semolina",
+  "key": "semolina",
+  "category": "Grains",
+  "icon": "🌾",
+  "count": 2,
+  "id": 28
+ },
+ {
+  "name": "Whole Wheat Flour",
+  "key": "whole wheat flour",
+  "category": "Grains",
+  "icon": "🌾",
+  "count": 2,
+  "id": 29
+ },
+ {
+  "name": "Lemon",
+  "key": "lemon",
+  "category": "Fruits",
+  "icon": "🍋",
+  "count": 6,
+  "id": 30
+ },
+ {
+  "name": "Raisin",
+  "key": "raisin",
+  "category": "Fruits",
+  "icon": "🍇",
+  "count": 3,
+  "id": 31
+ },
+ {
+  "name": "Tamarind",
+  "key": "tamarind",
+  "category": "Fruits",
+  "icon": "🫘",
+  "count": 3,
+  "id": 32
+ },
+ {
+  "name": "Coconut",
+  "key": "coconut",
+  "category": "Fruits",
+  "icon": "🥥",
+  "count": 2,
+  "id": 33
+ },
+ {
+  "name": "Cumin",
+  "key": "cumin",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 18,
+  "id": 34
+ },
+ {
+  "name": "Garam Masala",
+  "key": "garam masala",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 15,
+  "id": 35
+ },
+ {
+  "name": "Turmeric",
+  "key": "turmeric",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 15,
+  "id": 36
+ },
+ {
+  "name": "Green Chili",
+  "key": "green chili",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 12,
+  "id": 37
+ },
+ {
+  "name": "Red Chili Powder",
+  "key": "red chili powder",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 12,
+  "id": 38
+ },
+ {
+  "name": "Curry Leaf",
+  "key": "curry leaf",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 10,
+  "id": 39
+ },
+ {
+  "name": "Mustard Seed",
+  "key": "mustard seed",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 10,
+  "id": 40
+ },
+ {
+  "name": "Cardamom",
+  "key": "cardamom",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 7,
+  "id": 41
+ },
+ {
+  "name": "Baking Powder",
+  "key": "baking powder",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 2,
+  "id": 42
+ },
+ {
+  "name": "Saffron",
+  "key": "saffron",
+  "category": "Spices",
+  "icon": "🌶️",
+  "count": 2,
+  "id": 43
+ },
+ {
+  "name": "Oil",
+  "key": "oil",
+  "category": "Other",
+  "icon": "🫒",
+  "count": 24,
+  "id": 44
+ },
+ {
+  "name": "Sugar",
+  "key": "sugar",
+  "category": "Other",
+  "icon": "🍯",
+  "count": 9,
+  "id": 45
+ }
+]

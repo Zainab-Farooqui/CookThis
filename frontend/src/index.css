@@ -117,6 +117,30 @@ a {
   font-weight: 700;
 }
 
+.ct-nav-link {
+  color: var(--espresso);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.3rem 0.1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.ct-nav-link:hover {
+  border-bottom-color: var(--tomato);
+  color: var(--tomato-dark);
+}
+
+.ct-nav-link-disabled {
+  color: var(--espresso-soft);
+  opacity: 0.55;
+  cursor: default;
+}
+
+.ct-nav-link-disabled:hover {
+  border-bottom-color: transparent;
+  color: var(--espresso-soft);
+}
+
 /* ---------- Buttons ---------- */
 
 .btn-ct-primary,
@@ -158,6 +182,11 @@ a {
   background: var(--basil);
   color: #fff8ec;
   transform: translateY(-2px);
+}
+
+.btn-ct-small {
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
 }
 
 /* ---------- Recipe-card auth form ---------- */
@@ -393,4 +422,186 @@ a {
   .hero-banner {
     padding: 2rem 1.4rem;
   }
+}
+
+/* ---------- Ingredient selector ---------- */
+
+.ingredient-selector {
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.ingredient-search {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.ingredient-search-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.ingredient-search input.form-control {
+  padding-left: 2.4rem;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  font-family: var(--font-body);
+}
+
+.ingredient-search input.form-control:focus {
+  border-color: var(--tomato);
+  box-shadow: 0 0 0 3px rgba(232, 80, 58, 0.15);
+}
+
+.ingredient-category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.category-pill {
+  border: 2px solid var(--basil);
+  background: transparent;
+  color: var(--basil-dark);
+  border-radius: 999px;
+  padding: 0.35rem 0.95rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.category-pill:hover {
+  transform: translateY(-1px);
+}
+
+.category-pill-active {
+  background: var(--basil);
+  color: #fff8ec;
+}
+
+.ingredient-grid {
+  margin: 0;
+}
+
+.ingredient-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  border: 2px solid var(--line);
+  background: var(--cream);
+  border-radius: 14px;
+  padding: 0.9rem 0.5rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--turmeric);
+}
+
+.ingredient-card-selected {
+  background: var(--tomato);
+  border-color: var(--tomato-dark);
+  box-shadow: var(--shadow-lift);
+}
+
+.ingredient-card-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.ingredient-card-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--espresso);
+}
+
+.ingredient-card-selected .ingredient-card-name {
+  color: #fff8ec;
+}
+
+.ingredient-empty {
+  color: var(--espresso-soft);
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+/* ---------- Selected ingredients + recommend ---------- */
+
+.selected-ingredients {
+  margin-bottom: 1.25rem;
+}
+
+.selected-ingredients-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.selected-ingredients-header h2 {
+  font-size: 1.15rem;
+  margin: 0;
+  color: var(--tomato-dark);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.ingredient-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--turmeric);
+  color: var(--espresso);
+  border-radius: 999px;
+  padding: 0.4rem 0.5rem 0.4rem 0.85rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.ingredient-chip-remove {
+  border: none;
+  background: rgba(58, 38, 24, 0.15);
+  color: var(--espresso);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ingredient-chip-remove:hover {
+  background: rgba(58, 38, 24, 0.3);
+}
+
+.recommend-message {
+  max-width: 420px;
+}
+
+.recommend-btn {
+  font-size: 1.1rem;
+  padding: 0.8rem 2.2rem;
 }

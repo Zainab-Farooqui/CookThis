@@ -1,0 +1,47 @@
+name,ingredients,diet,prep_time,cook_time,flavor_profile,course,state,region
+Gulab jamun,"Milk powder, plain flour, baking powder, ghee, milk, sugar, water, cardamom",vegetarian,45,25,sweet,dessert,West Bengal,East
+Jalebi,"Maida, curd, sugar, oil, saffron, water",vegetarian,10,50,sweet,dessert,Uttar Pradesh,North
+Kheer,"Milk, rice, sugar, cardamom, cashew, raisins",vegetarian,10,40,sweet,dessert,Punjab,North
+Rasgulla,"Milk, sugar, lemon, water",vegetarian,20,30,sweet,dessert,West Bengal,East
+Gajar halwa,"Carrot, milk, sugar, ghee, cardamom, cashew, raisins",vegetarian,15,60,sweet,dessert,Punjab,North
+Sooji halwa,"Semolina, ghee, sugar, milk, cashew, raisins, cardamom",vegetarian,5,20,sweet,dessert,Maharashtra,West
+Aloo gobi,"Potato, cauliflower, onion, tomato, ginger, turmeric, cumin, coriander, oil, red chili powder",vegetarian,10,25,spicy,main course,Punjab,North
+Palak paneer,"Spinach, paneer, onion, tomato, garlic, ginger, cumin, garam masala, oil, cream",vegetarian,15,25,spicy,main course,Punjab,North
+Paneer butter masala,"Paneer, tomato, butter, cream, onion, ginger, garlic, garam masala, red chili powder, kasuri methi",vegetarian,15,25,spicy,main course,Punjab,North
+Mutter paneer,"Paneer, green peas, tomato, onion, ginger, garlic, cumin, garam masala, oil",vegetarian,10,25,spicy,main course,Punjab,North
+Butter chicken,"Chicken, butter, tomato, cream, onion, ginger, garlic, garam masala, yogurt, kasuri methi",non vegetarian,20,30,spicy,main course,Punjab,North
+Chicken tikka masala,"Chicken, yogurt, tomato, onion, cream, ginger, garlic, garam masala, red chili powder, oil, lemon",non vegetarian,30,30,spicy,main course,Punjab,North
+Dal makhani,"Urad dal, rajma, butter, cream, tomato, onion, ginger, garlic, garam masala",vegetarian,10,60,spicy,main course,Punjab,North
+Chole,"Chickpea, onion, tomato, ginger, garlic, cumin, garam masala, tea leaves, oil, coriander",vegetarian,10,40,spicy,main course,Punjab,North
+Rajma,"Rajma, onion, tomato, ginger, garlic, cumin, garam masala, oil, coriander",vegetarian,10,40,spicy,main course,Punjab,North
+Chicken biryani,"Rice, chicken, yogurt, onion, tomato, ginger, garlic, garam masala, saffron, ghee, mint, coriander",non vegetarian,30,45,spicy,main course,Telangana,South
+Veg pulao,"Rice, potato, carrot, green peas, onion, cumin, ghee, garam masala",vegetarian,10,25,mild,main course,Uttar Pradesh,North
+Idli,"Rice, urad dal, salt, water",vegetarian,480,15,mild,snack,Tamil Nadu,South
+Masala dosa,"Rice, urad dal, potato, onion, mustard seeds, turmeric, curry leaves, oil, green chili",vegetarian,480,30,spicy,snack,Karnataka,South
+Sambar,"Toor dal, tomato, onion, tamarind, sambar powder, drumstick, carrot, mustard seeds, curry leaves, oil",vegetarian,10,30,spicy,main course,Tamil Nadu,South
+Upma,"Semolina, onion, mustard seeds, curry leaves, green chili, ginger, oil, cashew",vegetarian,5,15,mild,snack,Karnataka,South
+Poha,"Flattened rice, onion, potato, peanut, mustard seeds, turmeric, curry leaves, green chili, lemon, coriander",vegetarian,5,15,mild,snack,Maharashtra,West
+Aloo paratha,"Whole wheat flour, potato, green chili, coriander, cumin, red chili powder, ghee",vegetarian,20,20,spicy,main course,Punjab,North
+Naan,"Maida, yogurt, milk, sugar, baking powder, butter, garlic",vegetarian,90,10,mild,main course,Punjab,North
+Roti,"Whole wheat flour, water, ghee",vegetarian,10,10,mild,main course,Punjab,North
+Bhindi masala,"Okra, onion, tomato, cumin, turmeric, coriander, red chili powder, oil, amchur",vegetarian,10,20,spicy,main course,Punjab,North
+Baingan bharta,"Eggplant, onion, tomato, garlic, ginger, green chili, cumin, coriander, oil",vegetarian,10,30,spicy,main course,Punjab,North
+Samosa,"Maida, potato, green peas, cumin, coriander, green chili, ginger, oil, garam masala",vegetarian,30,30,spicy,snack,Uttar Pradesh,North
+Pakora,"Gram flour, onion, potato, spinach, green chili, cumin, turmeric, oil, red chili powder",vegetarian,10,15,spicy,snack,Punjab,North
+Dhokla,"Gram flour, yogurt, ginger, green chili, sugar, lemon, mustard seeds, curry leaves, oil, baking soda",vegetarian,15,15,sweet,snack,Gujarat,West
+Kadhi,"Gram flour, yogurt, turmeric, cumin, mustard seeds, curry leaves, green chili, ginger, ghee",vegetarian,10,30,sour,main course,Gujarat,West
+Khichdi,"Rice, moong dal, ghee, cumin, turmeric, ginger, onion, tomato",vegetarian,10,25,mild,main course,Gujarat,West
+Rasam,"Tomato, tamarind, toor dal, cumin, black pepper, garlic, mustard seeds, curry leaves, coriander, oil",vegetarian,10,20,sour,main course,Tamil Nadu,South
+Fish curry,"Fish, coconut, onion, tomato, tamarind, red chili powder, turmeric, mustard seeds, curry leaves, oil, ginger, garlic",non vegetarian,20,30,spicy,main course,Kerala,South
+Egg curry,"Egg, onion, tomato, ginger, garlic, garam masala, turmeric, red chili powder, oil, coriander",non vegetarian,10,25,spicy,main course,Punjab,North
+Mutton rogan josh,"Mutton, yogurt, onion, ginger, garlic, garam masala, red chili powder, cardamom, clove, cinnamon, oil",non vegetarian,20,60,spicy,main course,Jammu & Kashmir,North
+Prawn masala,"Shrimp, onion, tomato, ginger, garlic, turmeric, red chili powder, coconut, curry leaves, oil",non vegetarian,15,20,spicy,main course,Goa,West
+Sweet lassi,"Yogurt, sugar, milk, cardamom, water",vegetarian,5,0,sweet,beverage,Punjab,North
+Pav bhaji,"Potato, cauliflower, green peas, tomato, onion, capsicum, butter, pav bhaji masala, bread, lemon",vegetarian,15,30,spicy,snack,Maharashtra,West
+Vada pav,"Potato, bread, gram flour, green chili, garlic, mustard seeds, curry leaves, oil, turmeric",vegetarian,15,20,spicy,snack,Maharashtra,West
+Egg bhurji,"Egg, onion, tomato, green chili, turmeric, coriander, oil, cumin",non vegetarian,5,10,spicy,snack,Maharashtra,West
+Chicken curry,"Chicken, onion, tomato, ginger, garlic, garam masala, turmeric, red chili powder, oil, coriander, yogurt",non vegetarian,15,40,spicy,main course,Maharashtra,West
+Jeera rice,"Rice, cumin, ghee, water",vegetarian,5,20,mild,main course,Punjab,North
+Dal tadka,"Toor dal, onion, tomato, garlic, cumin, mustard seeds, red chili powder, turmeric, ghee, coriander",vegetarian,10,30,spicy,main course,Punjab,North
+Aloo jeera,"Potato, cumin, turmeric, green chili, coriander, oil, lemon",vegetarian,5,15,spicy,main course,Rajasthan,West
+Shahi paneer,"Paneer, tomato, onion, cream, cashew, butter, garam masala, cardamom, ginger, garlic",vegetarian,15,25,mild,main course,Punjab,North
