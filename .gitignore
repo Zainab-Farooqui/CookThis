@@ -10,12 +10,21 @@ backend/target/
 .idea/
 *.iml
 
+# Python
+.venv/
+venv/
+**/.venv/
+**/__pycache__/
+*.py[cod]
+
 # Environment / secrets
 .env
+.env.*
+!.env.example
 
 # OS
 .DS_Store
 Thumbs.db
 
-
+# Spring Boot configuration containing local secrets
 backend/src/main/resources/application.properties

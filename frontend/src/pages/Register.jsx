@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
 import SteamBowl from "../components/SteamBowl";
+import PasswordField from "../components/PasswordField";
 import { isValidEmail } from "../utils/validation";
 
 function Register() {
@@ -97,27 +98,22 @@ function Register() {
           />
         </div>
 
-        <div className="ct-field">
-          <label htmlFor="register-password">Password</label>
-          <input
-            id="register-password"
-            type="password"
-            autoComplete="new-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+        <PasswordField
+          id="register-password"
+          label="Password"
+          autoComplete="new-password"
+          value={password}
+          onChange={setPassword}
+          showStrength
+        />
 
-        <div className="ct-field">
-          <label htmlFor="register-confirm-password">Confirm password</label>
-          <input
-            id="register-confirm-password"
-            type="password"
-            autoComplete="new-password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </div>
+        <PasswordField
+          id="register-confirm-password"
+          label="Confirm password"
+          autoComplete="new-password"
+          value={confirmPassword}
+          onChange={setConfirmPassword}
+        />
 
         <button className="btn-ct-primary" type="submit" disabled={loading}>
           {loading ? "Preheating…" : "Register"}

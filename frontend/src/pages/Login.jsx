@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
 import { useAuth } from "../context/AuthContext";
 import SteamBowl from "../components/SteamBowl";
+import PasswordField from "../components/PasswordField";
 import { isValidEmail } from "../utils/validation";
 
 function Login() {
@@ -40,7 +41,12 @@ function Login() {
         email: email.trim(),
         password,
       });
-      login({ name: response.data.name, email: response.data.email });
+      login({
+        id: response.data.id,
+        name: response.data.name,
+        email: response.data.email,
+        token: response.data.token,
+      });
       navigate("/home");
     } catch (err) {
       const message =
@@ -73,16 +79,13 @@ function Login() {
           />
         </div>
 
-        <div className="ct-field">
-          <label htmlFor="login-password">Password</label>
-          <input
-            id="login-password"
-            type="password"
-            autoComplete="current-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+        <PasswordField
+          id="login-password"
+          label="Password"
+          autoComplete="current-password"
+          value={password}
+          onChange={setPassword}
+        />
 
         <button className="btn-ct-primary" type="submit" disabled={loading}>
           {loading ? "Checking recipe…" : "Login"}

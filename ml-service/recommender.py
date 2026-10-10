@@ -24,6 +24,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import normalize as l2_normalize
 
 from ingredient_meta import PANTRY, normalize
+from substitutions import swaps_for
 
 
 def _identity(x):  # module-level so the fitted vectorizer can be pickled
@@ -63,8 +64,26 @@ class Recommender:
         q[idx] = 1.0
         return q
 
+    @staticmethod
+    def _total_time(meta: dict):
+        """prep + cook minutes, or None when the dataset has neither."""
+        if "prep_time" not in meta and "cook_time" not in meta:
+            return None
+        try:
+            return int(float(meta.get("prep_time", 0)) + float(meta.get("cook_time", 0)))
+        except (TypeError, ValueError):
+            return None
+
     def recommend(self, ingredients: list[str], top_n: int = 10, diet: str | None = None,
-                  min_score: float = 0.0) -> dict:
+                  min_score: float = 0.0, course: str | None = None, max_missing: int | None = None,
+                  exclude: list[str] | None = None, sort: str = "match") -> dict:
+        """Rank dishes for a basket of ingredients.
+
+        diet / course   - keep only dishes whose meta matches (case-insensitive)
+        max_missing     - keep only dishes that need at most N more ingredients
+        exclude         - drop dishes containing any of these ingredients (allergies, dislikes)
+        sort            - "match" (default) | "fewest_missing" | "quickest"
+        """
         wanted = []
         for raw in ingredients:
             n = normalize(raw)
@@ -92,6 +111,7 @@ class Recommender:
         score = w["coverage"] * coverage + w["cosine"] * cosine + w["latent"] * latent
 
         shared_with_user = self.dish_binary @ user_only          # count of user's picks in each dish
+        excluded = {normalize(e) for e in (exclude or []) if normalize(e)}
         order = np.argsort(-score)
         inv_vocab = getattr(self, "_inv_vocab", None)
         if inv_vocab is None:
@@ -103,26 +123,75 @@ class Recommender:
             if shared_with_user[i] <= 0 or score[i] < min_score:
                 continue
             d = self.dishes[i]
-            if diet and str(d.get("meta", {}).get("diet", "")).lower() != diet.lower():
+            meta = d.get("meta", {})
+            if diet and str(meta.get("diet", "")).lower() != diet.lower():
+                continue
+            if course and str(meta.get("course", "")).lower() != course.lower():
                 continue
             dish_ings = d["ingredients"]
+            if excluded and excluded.intersection(dish_ings):
+                continue
             have_list = [x for x in dish_ings if x in user_set]
             missing = [x for x in dish_ings if x not in user_set]
+            if max_missing is not None and len(missing) > max_missing:
+                continue
+            swaps = swaps_for(missing, user_set)
             results.append({
                 "name": d["name"],
                 "score": round(float(score[i]) * 100, 1),
                 "coverage": round(float(coverage[i]) * 100, 1),
                 "can_cook_now": len(missing) == 0,
+                "swap_ready": len(missing) > 0 and len(swaps) == len(missing),
                 "have": have_list,
                 "missing": missing,
+                "substitutions": swaps,
                 "ingredients": dish_ings,
+                "total_time": self._total_time(meta),
+                "meta": meta,
+            })
+
+        # fully cookable dishes first, then dishes cookable with swaps, then the chosen order
+        if sort == "fewest_missing":
+            key = lambda r: (len(r["missing"]), -r["score"])
+        elif sort == "quickest":
+            key = lambda r: (not r["can_cook_now"], r["total_time"] if r["total_time"] is not None else 10**6, -r["score"])
+        else:
+            key = lambda r: (not r["can_cook_now"], not r["swap_ready"], -r["score"])
+        results.sort(key=key)
+        total = len(results)
+        return {"results": results[:top_n], "total_matches": total, "unknown_ingredients": unknown}
+
+    # ---- similar dishes ---------------------------------------------------
+    def similar(self, name: str, top_n: int = 6) -> dict | None:
+        """Dishes closest to `name` (TF-IDF + latent blend). None if the dish is unknown."""
+        idx = next((i for i, d in enumerate(self.dishes) if d["name"].lower() == name.strip().lower()), None)
+        if idx is None:
+            return None
+        sim_tfidf = np.asarray(self.dish_tfidf @ self.dish_tfidf[idx].T.toarray()).ravel()
+        sim_latent = np.clip(self.dish_latent @ self.dish_latent[idx], 0, 1)
+        sim = 0.5 * sim_tfidf + 0.5 * sim_latent
+        base = set(self.dishes[idx]["ingredients"])
+        out = []
+        for j in np.argsort(-sim):
+            if j == idx:
+                continue
+            d = self.dishes[j]
+            out.append({
+                "name": d["name"],
+                "similarity": round(float(sim[j]) * 100, 1),
+                "shared": [x for x in d["ingredients"] if x in base],
                 "meta": d.get("meta", {}),
             })
-            if len(results) >= top_n:
+            if len(out) >= top_n:
                 break
-        # dishes that are fully cookable float to the top, then by score
-        results.sort(key=lambda r: (not r["can_cook_now"], -r["score"]))
-        return {"results": results, "unknown_ingredients": unknown}
+        return {"dish": self.dishes[idx]["name"], "similar": out}
+
+    # ---- filter options for the UI ----------------------------------------
+    def options(self) -> dict:
+        def uniq(key):
+            return sorted({str(d.get("meta", {}).get(key)).strip() for d in self.dishes
+                           if d.get("meta", {}).get(key) not in (None, "")})
+        return {"diets": uniq("diet"), "courses": uniq("course"), "regions": uniq("region")}
 
     # ---- persistence ------------------------------------------------------
     def save(self, path):

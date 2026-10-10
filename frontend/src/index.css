@@ -605,3 +605,139 @@ a {
   font-size: 1.1rem;
   padding: 0.8rem 2.2rem;
 }
+
+/* ---------- Recommendation results ---------- */
+
+.results-section {
+  margin-top: 2rem;
+}
+
+.results-section h2 {
+  font-size: 1.2rem;
+  color: var(--tomato-dark);
+  margin-bottom: 0.9rem;
+}
+
+.results-loading {
+  color: var(--espresso-soft);
+  font-style: italic;
+}
+
+.unknown-ingredients-note {
+  background: rgba(242, 183, 5, 0.15);
+  border: 1.5px solid var(--turmeric);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.88rem;
+  color: var(--espresso-soft);
+  margin-bottom: 1rem;
+}
+
+.dish-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.1rem;
+}
+
+.dish-result-card {
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  padding: 1.1rem 1.2rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.dish-result-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+.dish-result-card-ready {
+  border-color: var(--basil);
+}
+
+.dish-result-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.dish-result-title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--espresso);
+}
+
+.dish-result-score {
+  flex-shrink: 0;
+  background: var(--turmeric);
+  color: var(--espresso);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dish-result-status {
+  font-size: 0.88rem;
+  color: var(--espresso-soft);
+  margin: 0 0 0.6rem;
+}
+
+.dish-result-status-ready {
+  color: var(--basil-dark);
+  font-weight: 700;
+}
+
+.dish-result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.dish-result-tag {
+  background: var(--cream);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.75rem;
+  color: var(--espresso-soft);
+  text-transform: capitalize;
+}
+
+.dish-result-ingredients {
+  margin-top: 0.5rem;
+}
+
+.dish-result-ingredients-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--espresso-soft);
+  margin-bottom: 0.3rem;
+}
+
+.dish-result-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: 0 0.3rem 0.3rem 0;
+}
+
+.dish-result-pill-have {
+  background: rgba(63, 125, 92, 0.15);
+  color: var(--basil-dark);
+}
+
+.dish-result-pill-missing {
+  background: rgba(232, 80, 58, 0.12);
+  color: var(--tomato-dark);
+}

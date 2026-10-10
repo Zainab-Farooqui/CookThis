@@ -1,0 +1,257 @@
+/* =========================================================
+   CookThis — extra styles for the advanced features
+   (filters, favorites, history, swaps, similar dishes).
+   Loaded after index.css so it reuses the same colour variables.
+   ========================================================= */
+
+/* ---------- Navbar ---------- */
+.ct-nav-link-active {
+  color: var(--tomato-dark);
+  font-weight: 700;
+}
+
+.nav-badge {
+  display: inline-block;
+  margin-left: 6px;
+  min-width: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--tomato);
+  color: #fff;
+  font-size: 0.72rem;
+  line-height: 20px;
+  text-align: center;
+}
+
+/* ---------- Filter bar ---------- */
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 18px 0 8px;
+  padding: 14px 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--espresso-soft);
+}
+
+.filter-field-wide {
+  grid-column: span 2;
+}
+
+.filter-field select,
+.filter-field input {
+  padding: 8px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface, #fff);
+  color: var(--espresso);
+  font: inherit;
+  font-weight: 500;
+}
+
+.filter-field select:focus,
+.filter-field input:focus {
+  outline: none;
+  border-color: var(--tomato);
+}
+
+@media (max-width: 600px) {
+  .filter-field-wide {
+    grid-column: span 1;
+  }
+}
+
+/* ---------- Result cards ---------- */
+.results-summary {
+  margin: 0 0 14px;
+  color: var(--espresso-soft);
+  font-weight: 600;
+}
+
+.dish-result-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fav-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--espresso-soft);
+  cursor: pointer;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.fav-btn:hover {
+  transform: scale(1.15);
+  color: var(--tomato);
+}
+
+.fav-btn-on {
+  color: var(--tomato);
+}
+
+.coverage-bar {
+  height: 6px;
+  margin: 4px 0 10px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.coverage-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--turmeric), var(--basil));
+  transition: width 0.4s ease;
+}
+
+.dish-result-card-swap {
+  border-color: var(--turmeric);
+}
+
+.dish-result-status-swap {
+  color: #9a6b00;
+}
+
+.swap-hint {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--basil-dark);
+}
+
+.dish-result-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ---------- Similar dishes panel ---------- */
+.similar-panel {
+  margin: 0 0 18px;
+  padding: 16px 18px;
+  background: var(--paper);
+  border: 1.5px dashed var(--turmeric);
+  border-radius: 16px;
+}
+
+.similar-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.similar-panel-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.similar-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.similar-item {
+  padding: 10px 12px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.similar-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.similar-shared {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  color: var(--espresso-soft);
+}
+
+/* ---------- Favorites + History pages ---------- */
+.library-page {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.library-header {
+  margin-bottom: 18px;
+}
+
+.library-header h1 {
+  margin: 0 0 4px;
+}
+
+.library-header p {
+  margin: 0 0 10px;
+  color: var(--espresso-soft);
+}
+
+.library-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.library-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.library-item-column {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.library-item-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.library-item-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.library-item-meta {
+  font-size: 0.85rem;
+  color: var(--espresso-soft);
+}
+
+.library-item-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}

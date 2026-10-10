@@ -1,13 +1,19 @@
 import { createContext, useContext, useState } from "react";
+import { STORAGE_KEY } from "../services/api";
 
 const AuthContext = createContext(null);
-const STORAGE_KEY = "cookthis_user";
 
 function readStoredUser() {
   const stored = localStorage.getItem(STORAGE_KEY);
   if (!stored) return null;
   try {
-    return JSON.parse(stored);
+    const parsed = JSON.parse(stored);
+    // Sessions saved before login tokens existed have no token: ask for a fresh login.
+    if (!parsed?.token) {
+      localStorage.removeItem(STORAGE_KEY);
+      return null;
+    }
+    return parsed;
   } catch {
     localStorage.removeItem(STORAGE_KEY);
     return null;

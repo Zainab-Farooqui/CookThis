@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    <meta name="description" content="CookThis - pick the ingredients you have and discover what you can cook." />
+    <meta name="theme-color" content="#e8503a" />
+    <title>CookThis - what can I cook today?</title>
+    <!-- Apply the saved theme before the first paint so there is no light-mode flash. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("cookthis_theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.dataset.theme = t;
+          document.documentElement.setAttribute("data-bs-theme", t);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
